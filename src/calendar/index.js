@@ -58,6 +58,7 @@ class Calendar extends Component {
     renderArrow: PropTypes.func,
     // Provide custom day rendering component
     dayComponent: PropTypes.any,
+    extraDayComponent: PropTypes.any,
     // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
     monthFormat: PropTypes.string,
     // Disables changing month when click on days of other months (when hideExtraDays is false). Default = false
@@ -151,7 +152,19 @@ class Calendar extends Component {
     }
     let dayComp;
     if (!dateutils.sameMonth(day, this.state.currentMonth) && this.props.hideExtraDays) {
-      if (this.props.markingType === 'period') {
+      if (this.props.extraDayComponent) {
+        const ExtraDayComp = this.props.extraDayComponent;
+        dayComp = (
+          <ExtraDayComp
+            key={id}
+            state={state}
+            theme={this.props.theme}
+            date={xdateToData(day)}
+            currentMonth={xdateToData(this.state.currentMonth)}
+            marking={this.getDateMarking(day)}
+          />
+        );
+      } else if (this.props.markingType === 'period') {
         dayComp = (<View key={id} style={{flex: 1}}/>);
       } else {
         dayComp = (<View key={id} style={{width: 32}}/>);
