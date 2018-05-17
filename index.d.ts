@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { StyleProp, ViewStyle } from 'react-native';
+import { XDate }                from 'xdate';
 
 export interface ParamDayProps {
     dateString: string,
@@ -75,7 +76,7 @@ declare class CalendarList extends React.Component<CalendarListProps, any> {}
 
 declare class Agenda extends React.Component<AgendaProps, any> {}
 
-declare function LocaleConfig(): any;
+declare class LocaleConfig extends XDate {}
 
 export {
     Calendar,
