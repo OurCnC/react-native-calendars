@@ -480,7 +480,9 @@ interface AgendaProps {
 
 declare class Calendar extends React.Component<CalendarProps, any> {}
 
-declare class CalendarList extends React.Component<CalendarListProps, any> {}
+declare class CalendarList extends React.Component<CalendarListProps, any> {
+    scrollToDay(date: ParamDayProps, timeout: number, animation: boolean);
+}
 
 declare class Agenda extends React.Component<AgendaProps, any> {}
 
