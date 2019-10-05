@@ -9,8 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wix/react-native-calendars"
+    "url": "git+https://github.com/OurCnC/react-native-calendars"
   },
+  "homepage": "https://github.com/OurCnC/react-native-calendars#readme"
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
